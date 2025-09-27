@@ -6,10 +6,24 @@
     <title>Startercode</title>
 </head>
 <body>
-    <button id="add">Add</button>
-    <svg id="svg" width="300" height="300" xmlns="http://www.w3.org/2000/svg">  
+    <h1>SVG Shape Generator</h1>
+    
+
+    <label for="select">Shape type</select></label>
+    <select id="select">    
+        <option value="circle">circle</option>
+        <option value="rectangle">rectangle</option>
+    </select>
+    <div>
+    <button id="add">Add Shape</button>
+    </div>
+    <div>
+    <button id="clear">Clear All</button>
+    </div>
+
+    <svg id="svg" width="600" height="400" xmlns="http://www.w3.org/2000/svg">  
+    <script src="./src/index.ts" type="module"></script>
     </svg>
 
-    <script src="./src/index.ts" type="module"></script>
 </body>
 </html>
