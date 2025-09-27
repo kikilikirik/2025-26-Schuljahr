@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Startercode</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>SVG Shape Generator</h1>
-    
-
-    <label for="select">Shape type</select></label>
-    <select id="select">    
+    <div>
+      <label for="select">Shape Type:</label>
+      <select id="select">
         <option value="circle">circle</option>
         <option value="rectangle">rectangle</option>
-    </select>
-    <div>
-    <button id="add">Add Shape</button>
+      </select>
     </div>
     <div>
-    <button id="clear">Clear All</button>
+      <button id="add">add Shape</button>
     </div>
-
-    <svg id="svg" width="600" height="400" xmlns="http://www.w3.org/2000/svg">  
+    <div>
+      <button id="clear">clear All</button>
+    </div>
+    <svg id="svg" width="600" height="400"></svg>
     <script src="./src/index.ts" type="module"></script>
-    </svg>
-
-</body>
+  </body>
 </html>
