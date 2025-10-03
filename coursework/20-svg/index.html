@@ -8,18 +8,14 @@
   <body>
     <h1>SVG Shape Generator</h1>
     <div>
-      <label for="select">Shape Type:</label>
-      <select id="select">
-        <option value="circle">circle</option>
-        <option value="rectangle">rectangle</option>
-      </select>
-    </div>
-    <div>
-      <button id="add">add Shape</button>
-    </div>
-    <div>
-      <button id="clear">clear All</button>
-    </div>
+    <select id="select">
+      <option id="circle">Kreis</object>
+      <option id="rectuangle">Rechteck</object>
+    </select>
+    <button id="add">Add Shape</button>
+    <button id="clear">Clear all</button>
+  </div>
+    
     <svg id="svg" width="600" height="400"></svg>
     <script src="./src/index.ts" type="module"></script>
   </body>
