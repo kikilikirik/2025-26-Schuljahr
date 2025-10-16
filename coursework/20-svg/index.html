@@ -6,17 +6,21 @@
     <title>Startercode</title>
   </head>
   <body>
-    <h1>SVG Shape Generator</h1>
+    <h1 style="color: aqua;">Generator</h1>
     <div>
-    <select id="select">
-      <option id="circle">Kreis</object>
-      <option id="rectuangle">Rechteck</object>
-    </select>
-    <button id="add">Add Shape</button>
-    <button id="clear">Clear all</button>
-  </div>
-    
-    <svg id="svg" width="600" height="400"></svg>
+      <select id="select">
+        <option id="cirlce">cirlce</option>
+        <option id="rectangle">rectangle</option>
+      </select>
+      <br />
+      <button id="add">add</button>
+      <br />
+      <button id="clear">clear all</button>
+    </div>
+
+    <svg id="svg" width="600" height="400">
+      <rect stroke="black" x="0" y="0" width="600" height="400" fill="white">
+    </svg>
     <script src="./src/index.ts" type="module"></script>
   </body>
 </html>
