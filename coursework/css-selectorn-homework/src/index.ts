@@ -1,5 +1,4 @@
 import "./styles.css";
-import "./styles.css";
 // Select all h2 headings and add a click event
 const headings = document.querySelectorAll("h2");
 
