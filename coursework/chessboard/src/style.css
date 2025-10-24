@@ -1,0 +1,28 @@
+.square {
+  width: 40px;
+  height: 40px;
+}
+.row-label {
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.column-label {
+  width: 40px;
+  height: 20px;
+  margin-bottom: 3px;
+  text-align: center;
+}
+.board-row,
+.column-labels {
+  display: flex;
+}
+.light {
+  background-color: bisque;
+}
+.dark {
+  background-color: brown;
+}
