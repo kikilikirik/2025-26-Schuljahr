@@ -1,0 +1,11 @@
+#colored-rect{
+   background-color: darkblue;
+   display: grid;
+   grid-template-columns: repeat(7, 1fr);
+}
+.cell{
+    height: 35px;
+    width: 35px;
+    background-color: white;
+    border-radius: 50%;
+}
