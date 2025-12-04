@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding : 0;
-    background-color : #a0e7ff;
+    background-color : #000000;
     color: white;
     font-family: sans-serif;
     display: flex;
@@ -11,9 +11,12 @@ body {
     min-height: 100vh;
 }
 #aquarium {
-    background-image:url('../assets/aquarium-background.png');
+    background-image: url('../assets/aquarium-background.png');
     background-size: cover;
     width: 800px;
-    aspect-ratio: 16/8;
-    border: spx solid white;
+    aspect-ratio: 16/9;
+    border: Spx solid white;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
 }
