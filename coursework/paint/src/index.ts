@@ -1,6 +1,6 @@
-import './stales.css';
-import { ToolSelection, ToolType } from './ToolSelection';
+import './styles.css'
 import { ShapeManager } from './shapemanager';
-
-const toolSelectionWidget = new ToolSelection((toolType) => console.log(toolType));
+import { ToolSelection } from './ToolSelection';
+ 
+const ToolSelectionWidget = new ToolSelection((toolType) => console.log(toolType));
 const shapeManager = new ShapeManager();
