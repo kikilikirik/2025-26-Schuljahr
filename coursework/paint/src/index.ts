@@ -1,3 +1,6 @@
-const helloWorldHeader = document.getElementById("helloWorldHeader") as HTMLHeadingElement;
+import './stales.css';
+import { ToolSelection, ToolType } from './ToolSelection';
+import { ShapeManager } from './shapemanager';
 
-helloWorldHeader.innerText += "!";
+const toolSelectionWidget = new ToolSelection((toolType) => console.log(toolType));
+const shapeManager = new ShapeManager();
