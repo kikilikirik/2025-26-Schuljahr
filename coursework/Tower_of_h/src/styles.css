@@ -1,0 +1,105 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0F172A; 
+    color: #F8FAFC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 700px;
+    margin-bottom: 20px;
+}
+
+#resetbtn, #playbtn {
+    background-color: #EF4444;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#resetbtn:hover, #playbtn:hover {
+    background-color: #DC2626;
+}
+
+
+
+.game-base {
+    margin-top: 40px;
+    width: 80%;
+    height: 400px;
+    background-color: #1e3b21; 
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+
+.tower {
+    width: 12px;
+    height: 250px;
+    background-color: #94A3B8; 
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.controls {
+    display: flex;
+    gap: 200px;
+    justify-content: center;
+    margin-right: 125px;
+}
+
+#first, #second, #third {
+    background-color: #7fc3d9;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    min-width: 45px;
+    height: 40px;
+}
+
+#first:hover, #second:hover, #third:hover {
+    background-color: #45b5d3;
+}
+
+#svgContainer {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    justify-content: center;
+}
+
+#svg {
+    width: 100%;
+    height: auto;
+    background-color: #0b1220;
+    border-radius: 12px;
+    display: block;
+}
+

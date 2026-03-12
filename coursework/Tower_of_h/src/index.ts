@@ -1,3 +1,6 @@
-const helloWorldHeader = document.getElementById("helloWorldHeader") as HTMLHeadingElement;
+import './styles.css';
+import { Game } from './game';
+import { Disks } from './disks';
+new Game();
+new Disks();
 
-helloWorldHeader.innerText += "!";

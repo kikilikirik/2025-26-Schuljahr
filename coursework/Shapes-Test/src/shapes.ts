@@ -14,6 +14,10 @@ export class Rectangle extends Shapes {
   get description(): string {
     return `Rectangle (Height: ${this.height}, Width: ${this.width})`;
   }
+
+  calculateArea(): number {
+    return this.height * this.width;
+  }
 }
 
 export class Square extends Shapes {
@@ -23,6 +27,10 @@ export class Square extends Shapes {
 
   get description(){
     return `Square (Side: ${this.side})`;
+  }
+
+  calculateArea(): number {
+    return this.side * this.side;
   }
 }
 

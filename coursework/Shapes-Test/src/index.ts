@@ -14,10 +14,32 @@ function getRandomNumber(min: number = 1, max: number = 100): number {
 }
 
 // Function to build HTML list and calculate total area
-function buildHtmlList(): void {}
+function buildHtmlList(): void {
+  shapesList.innerHTML = '';
+  let totalArea = 0;
+  shapes.forEach(shape => {
+    const li = document.createElement('li');
+    li.textContent = `${shape.description} - Area: ${shape.calculateArea()}`;
+    shapesList.appendChild(li);
+    totalArea += shape.calculateArea();
+  });
+  totalAreaElement.textContent = totalArea.toString();
+}
 
 document.getElementById('square')?.addEventListener('click', () => {
   const square = new Square(getRandomNumber());
   shapes.push(square);
+  buildHtmlList();
+});
+
+document.getElementById('rectangles')?.addEventListener('click', () => {
+  const rectangle = new Rectangle(getRandomNumber(), getRandomNumber());
+  shapes.push(rectangle);
+  buildHtmlList();
+});
+
+document.getElementById('line')?.addEventListener('click', () => {
+  const line = new Line(getRandomNumber());
+  shapes.push(line);
   buildHtmlList();
 });

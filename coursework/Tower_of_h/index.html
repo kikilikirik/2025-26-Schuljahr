@@ -1,12 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Startercode</title>
-</head>
-<body>
-    <h1 id="helloWorldHeader">Hello World</h1>
-    <script src="./src/index.ts" type="module"></script>
-</body>
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <div class="header-buttons">
+      <button id="resetbtn">Reset</button>
+      <button id="playbtn">Play</button>
+    </div>
+
+    <div class="main-container">
+      <div id="svgContainer">
+        <svg id="svg" width="1000" height="450">
+        
+        </svg>
+      </div>
+
+      <div class="controls">
+        <button id="first">1</button>
+        <button id="second">2</button>
+        <button id="third">3</button>
+      </div>
+    </div>
+
+    <script src="./src/index.ts" type="module">
+    </script>
+    
+  </body>
 </html>
