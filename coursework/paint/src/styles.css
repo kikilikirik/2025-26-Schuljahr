@@ -31,16 +31,26 @@ body {
     }
   }
 }
-#drawing-canvas {
-  Circle {
-    fill: darkblue;
-    stroke : blue;
-  }
-  .temp{
-    opacity: 0.5;
-    fill : red
-  }
+#drawing-canvas circle {
+  fill: darkblue;
+  stroke: blue;
+  stroke-width: 2;
 }
+#drawing-canvas rect {
+  fill: green;
+  stroke: aquamarine;
+  stroke-width: 2;
+}
+#drawing-canvas line {
+  stroke: purple;
+  stroke-width: 5px;
+}
+#drawing-canvas .temp {
+  opacity: 0.5;
+  fill: red;
+  stroke: red;
+}
+
 .widget {
   border-radius: 9px;
   box-shadow: 0 4px 8px grey;

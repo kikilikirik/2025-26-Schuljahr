@@ -14,42 +14,10 @@ function getRandomNumber(min: number = 1, max: number = 100): number {
 }
 
 // Function to build HTML list and calculate total area
-function buildHtmlList(): void {
-  // Clear existing list
-  shapesList.innerHTML = '';
+function buildHtmlList(): void {}
 
-  // Calculate total area
-  let totalArea = 0;
-
-  // Iterate over shapes and add to list
-  shapes.forEach((shape) => {
-    const li = document.createElement('li');
-    li.textContent = `${shape.description} with area: ${shape.calculateArea().toFixed(2)}`;
-    shapesList.appendChild(li);
-    totalArea += shape.calculateArea();
-  });
-
-  // Update total area display
-  totalAreaElement.textContent = totalArea.toFixed(2);
-}
-
-// Add Rectangle
-document.getElementById('rectangles')?.addEventListener('click', () => {
-  const rectangle = new Rectangle(getRandomNumber(), getRandomNumber());
-  shapes.push(rectangle);
-  buildHtmlList();
-});
-
-// Add Square
 document.getElementById('square')?.addEventListener('click', () => {
   const square = new Square(getRandomNumber());
   shapes.push(square);
-  buildHtmlList();
-});
-
-// Add Line
-document.getElementById('line')?.addEventListener('click', () => {
-  const line = new Line(getRandomNumber());
-  shapes.push(line);
   buildHtmlList();
 });

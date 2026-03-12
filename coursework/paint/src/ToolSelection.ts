@@ -2,12 +2,15 @@ export enum ToolType {
     CIRCLE,
     RECTANGLE,
     ELLIPSE,
+    LINE,
+    Triangle,
     POINTER
 }
  
 type ToolChangeCallback = (tool: ToolType) => void;
  
 export class ToolSelection {
+    private currentToolValue: ToolType = ToolType.CIRCLE;
     private toolContainer: HTMLDivElement;
  
     constructor(private callback: ToolChangeCallback, toolContainerId: string = 'tool-container') {
@@ -15,7 +18,8 @@ export class ToolSelection {
  
         this.toolContainer.appendChild(this.createToolButton(ToolType.CIRCLE, 'Circle', true));
         this.toolContainer.appendChild(this.createToolButton(ToolType.RECTANGLE, 'Rectangle'));
-        this.toolContainer.appendChild(this.createToolButton(ToolType.ELLIPSE, 'Ellipse'));
+        this.toolContainer.appendChild(this.createToolButton(ToolType.LINE, 'Line'));
+        this.toolContainer.appendChild(this.createToolButton(ToolType.Triangle, 'Triangle'));
         this.toolContainer.appendChild(this.createToolButton(ToolType.POINTER, 'Pointer'));
     }
  
@@ -26,10 +30,12 @@ export class ToolSelection {
             this.unselectAll();
             button.className = 'selected';
             this.callback(toolType);
+            this.currentToolValue = toolType;
         });
         if(isSelected){
             button.className = 'selected';
             this.callback(toolType);
+            this.currentToolValue = toolType;
         }
         return button;
     }

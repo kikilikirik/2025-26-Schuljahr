@@ -1,4 +1,5 @@
-import { Circle, Shape, Point } from './shapes';
+import { Circle, Shape, Point, Rectangle, Line} from './shapes';
+import { ToolType } from './ToolSelection';
 
 type DrawingState = {
   currentTool: Shape;
@@ -6,9 +7,10 @@ type DrawingState = {
 };
 
 export class ShapeManager {
-  private shapes: Shape[] = [];
+  private shaped: Shape[] = [];
   private container: SVGSVGElement;
   private currentTool: DrawingState | undefined = undefined;
+  public currentToolType = ToolType.CIRCLE;
 
   constructor(svgContainerId: string = 'drawing-canvas') {
     this.container = document.getElementById(svgContainerId) as unknown as SVGSVGElement;
@@ -16,34 +18,82 @@ export class ShapeManager {
     this.container?.addEventListener('mouseup', (event) => this.handleMouseUp(event));
     this.container?.addEventListener('mousemove', (event) => this.handleMouseMove(event));
     this.container?.addEventListener('mouseleave', (event) => this.handleMouseLeave(event));
+    this.container?.addEventListener('mouseenter', (event) => this.handleMouseMove(event));
+
+
   }
+  
   private handleMouseDown(event: MouseEvent): void {
-    const circleCenter = this.getSVGCoordinates(event);
-    const circle = new Circle(this.container, circleCenter);
-    circle.tempMode = true;
-    this.shapes.push(circle);
+    if (this.currentToolType === ToolType.POINTER) {
+      this.handleMousePinterMouseDown(event);
+    }else{
+      this.startDrawingState(event);
+    }
+  }
+  
+  private handleMousePinterMouseDown(event: MouseEvent): void {
+    const clickPoint = this.getSVGCoordinates(event);
+    for (let i = this.shaped.length - 1; i >= 0; i--) {
+      const shape = this.shaped[i];
+      if (shape.contains(clickPoint)) {
+        console.log('Shape clicked:', shape);
+        // You can add more logic here to handle the selected shape
+        break; // Stop after the first shape is found
+      }
+    }
+
+   
+
+  }
+  
+  
+  private startDrawingState(event: MouseEvent): void {
+    const start = this.getSVGCoordinates(event);
+
+    let newShape: Shape;
+    if (this.currentToolType === ToolType.CIRCLE) {
+      newShape = new Circle(this.container, start);
+    
+    }else if (this.currentToolType === ToolType.RECTANGLE) {
+      newShape = new Rectangle(this.container, start);
+    }else {
+      newShape = new Line(this.container, start);
+    }
+    newShape.tempMode = true;
+    this.shaped.push(newShape);
     this.currentTool = {
-      currentTool: circle,
-      start: circleCenter,
+      currentTool: newShape,
+      start: start,
     };
   }
-
   private handleMouseUp(event: MouseEvent): void {
+
+    
+    if (this.currentTool){
     this.currentTool!.currentTool.tempMode = false;
     this.currentTool = undefined;
+
   }
+}
 
   private handleMouseMove(event: MouseEvent): void {
+
     if (this.currentTool) {
       this.currentTool.currentTool.updatePosition(
         this.currentTool.start,
         this.getSVGCoordinates(event)
-      )
+      );
   }}
 
   private handleMouseLeave(event: MouseEvent): void {
+
+    if (this.currentTool){
+    this.currentTool!.currentTool.tempMode = false;
     this.currentTool = undefined;
+
   }
+}
+
 
   private getSVGCoordinates(event: MouseEvent): Point {
     // This method converts mouse event coordinates to SVG coordinates
